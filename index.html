@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    .active{
+        color: white;
+        background-color: blue;
+    }
+</style>
+<body>
+    <header class="border-b-2  border-[#17171720]">
+        <nav class="w-11/12 flex justify-between mx-auto py-4  ">
+            <div class="flex">
+                <h2 class="font-semibold">English</h2>
+                <img class="w-[30px] h-[30px]" src="assets/logo.png" alt="">
+                <h2 class="font-semibold pl-2 text-black">জানালা</h2>
+            </div>
+            <div class="flex gap-4">
+                <button id="faq-btn" class="btn border-[#422AD5] text-[#422AD5] hover:text-white hover:bg-[#422AD5] "><i
+                        class="fa-solid fa-circle-question"></i><span class="font-semibold text-xl">FAQ</span></button>
+                <button id="learn-btn" class="btn border-[#422AD5] text-[#422AD5] hover:text-white hover:bg-[#422AD5]"> <i
+                        class="fa-solid fa-book-open"></i><span class="font-semibold text-xl">Learn</span></button>
+                <button class="btn border-[#422AD5] text-[#422AD5] hover:text-white hover:bg-[#422AD5]"><i
+                        class="fa-solid fa-arrow-right-from-bracket"></i><span class="font-semibold text-xl">Log
+                        out</span></button>
+            </div>
+        </nav>
+    </header>
+    <main>
+    <section class="w-11/12 mx-auto my-4">
+        <div class="flex gap-70 items-center">
+
+            <div class="space-y-4">
+                <h1 class="font-bold text-5xl"><span class="text-[#00BCFF]">English</span> is Easy!!</h1>
+                <p class="font-medium text-2xl text-[#18181B80]">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি
+                    নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ
+                </p>
+                <input id="Text" type="text" class="input" id="type-name" placeholder="Enter your Name">
+                <br>
+                <input id="Pin" type="text" class="input" id="type-pin" placeholder="Enter your password(123456)">
+                <br>
+                <button id="click-btn" class="btn bg-blue-700 text-white">Get Started</button>
+            </div>
+            <img class="" src="assets/hero-student.png" alt="">
+        </div>
+    </section>
+    
+    <section id="learn-section">
+            <h1 class="font-bold text-4xl my-7 text-center"><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies</h1>
+        <nav id="lesson-container" class="w-1/2 flex justify-center  mx-auto gap-3 mb-5">
+            <button id="btn-all" onclick="loadAllWords()" class="btn py-7 text-blue-600 border-blue-600 rounded-lg hover:text-white hover:bg-blue-700">All Vocabulary</button>
+        </nav>
+         </section>
+
+         <section id="looder" class="text-center py-5 hidden">
+<span class="loading loading-dots loading-xl"></span>
+         </section>
+         <section id="words-container" class="grid grid-cols-3 gap-5 w-11/12 mx-auto bg-gray-100 p-7 rounded-lg">
+            
+ <div class="flex flex-col text-center w-11/12 mx-auto rounded-3xl  py-16 col-span-full">
+            <p class="text-[13px] mb-3 text-[#79716B]">আপনি এখনো কোন Lesson Select  করেন নি</p>
+            <h3 class="font-medium text-[34px]">একটি Lesson Select করুন।</h3>
+          </div>
+            
+           </section> 
+<dialog id="word_details" class="modal">
+    <div class="modal-box">
+  <div id="details-container">
+ 
+    </div>
+    </div>
+
+</dialog>
+        
+       
+   
+
+    <section id="faq-section" class="w-11/12 my-12 mx-auto">
+<h1 class="font-bold text-4xl text-center"><span class="text-[#00BCFF]">Frequently </span>Asked Questions</h1>
+<div class="space-y-5 my-20">
+<div tabindex="0" class="collapse collapse-plus border  border-none bg-gray-200 rounded-2xl">
+    <div class="collapse-title font-medium text-2xl">1:The difference between var, let, and const</div>
+    <div class="collapse-content text-xl ">
+     <li> Var:hocche functional scope,function er vitore declare kora hole function er vahir theke access kora jai na & ekbar declare kora hole pore re-assign kora jai</li>
+      <li>Let:hocche block scope,bloge er vitore declear kora hole block er vahir theke access kora jai na,& ekbar declare kora hole pore re-assign kora jai</li>
+      
+    <li>Const:hocche block scope,bloge er vitore declear kora hole block er vahir theke access kora jai na,& ekbar declare kora hole pore re-assign kora jai na .</li>
+    </div>
+  </div>
+<div tabindex="0" class="collapse collapse-plus border  border-none bg-gray-200 rounded-2xl">
+    <div class="collapse-title font-semibold text-xl">2: The difference between map(), forEach(), and filter()</div>
+    <div class="collapse-content text-xl"><li>For Each: protiti element er upor kaj kore but kunu value return kore na r notun array create kore na</li> 
+        <li>Map:Ekti array er protiti element er upor kaj kore . Ei method value return kore and notun array create kore </li>
+        <li>filter:Ekti array er protiti element er upor kaj kore condition er sapekkhe . Ei method value return kore and element check kore true hole notun array te rakhe r na hole bad diye condition match kora element niye new array create kore. </li>
+     
+    </div>
+  </div>
+<div tabindex="0" class="collapse collapse-plus border  border-none bg-gray-200 rounded-2xl">
+    <div class="collapse-title font-semibold text-xl">3:Explain arrow functions and how they are different from regular functions</div>
+    <div class="collapse-content text-xl"><li>Array function: Function keyword likha lage na.syntex small and argument kaj kore na R function ek line er hole {} & return use kora lage na.</li>
+        <li>Nornal function: Function keyword likha lage .syntex big and argument kaj kore . R function ek line er hole {} & return use kora lage .</li>
+    </div>
+  </div>
+<div tabindex="0" class="collapse collapse-plus border  border-none bg-gray-200 rounded-2xl">
+    <div class="collapse-title font-semibold text-xl">4:How JavaScript Promises work</div>
+    <div class="collapse-content text-xl"><li>Javascript asynchronous operation handle korar jonno use hoya ekta ekti special object .Data load korar somoy jodi kunu error hoy tahole reject msg hisabe call r ta nohole resolve msg e call hoy. r promise er moddome code clean hoy sohoje buja jai and sohoje error handle kora jai</li>
+     
+    </div>
+  </div>
+<div tabindex="0" class="collapse collapse-plus border  border-none bg-gray-200 rounded-2xl">
+    <div class="collapse-title font-semibold text-xl">5:How closures work in JavaScript</div>
+    <div class="collapse-content text-xl">
+      <li>Ekti function er vitore jokhon onno r ekti function thake and vitorer inner function jkhon outter function er variable access kore tar kaj complete korei holo closure function er kaj</li>
+    </div>
+  </div>
+
+</div>
+    </section>
+</main>
+<footer class=" border-t-2 border-[#17171720]">
+  <div class="flex justify-between w-11/12 mx-auto py-24">
+<div class="space-y-3">
+    <h1 class="font-bold text-5xl">English is Easy!!</h1>
+    <h2 class="font-medium text-xl text-black">ইংরেজি শিখুন সহজে</h2>
+    <p>Providing ED-Tech Applications since 2025</p>
+</div>
+<div class="mt-20">
+    <h5 class="mb-2">Follow us</h5>
+    <div class="flex gap-3">
+        <img src="assets/fb-thumb.png" alt="">
+        <img src="assets/youtube-thumb.png" alt="">
+        <img src="assets/github-thumb.png" alt="">
+    </div>
+</div>
+</div>
+</footer>
+    <script src="script/text.js"></script>
+    <script src="script/input.js"></script>
+</body>
+
+</html>
